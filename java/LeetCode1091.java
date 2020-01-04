@@ -14,6 +14,11 @@ public class LeetCode1091{
         }
     }
 
+    /**
+     * BFS
+     * 依次遍历每个小方格周围 8 格中未遍历过的格子，将其加入队列中
+     * 最先遇到右下角即为最短路径
+     */
     public int shortestPathBinaryMatrix(int[][] grid) {
         if (grid[0][0] == 1 || grid[grid.length - 1][grid[0].length - 1] == 1){
             return -1;
