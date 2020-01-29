@@ -1,5 +1,6 @@
 public class LeetCode0565{
-    public int arrayNesting(int[] nums) {
+    // 依次按照数组内容访问元素，同时记录该位置可到达的最大长度，选取最大值
+    public int arrayNesting2ms(int[] nums) {
         int[] dp = new int[nums.length];
         for (int i = 0;i < dp.length;i++){
             dp[i] = -1;
@@ -23,5 +24,24 @@ public class LeetCode0565{
         flags[index] = false;
         dp[index] = len;
         return len;
+    }
+
+    // 记录访问过的，不再访问
+    public int arrayNesting4ms(int[] nums) {
+        boolean[] visited  = new boolean[nums.length];
+        int res = 0;
+        for (int i = 0;i < nums.length;++i) {
+            if (visited[i] == false) {
+                int count = 0;
+                int j = i;
+                while (visited[j] == false) {
+                    count++;
+                    visited[j] = true;
+                    j = nums[j];
+                }
+                res = Math.max(res, count);
+            }
+        }
+        return res;
     }
 }
