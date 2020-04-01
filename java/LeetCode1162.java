@@ -1,5 +1,8 @@
-public class LeetCode1162{
-    public int maxDistance(int[][] grid) {
+import java.util.LinkedList;
+import java.util.Queue;
+
+public class LeetCode1162 {
+    public int maxDistance39ms(int[][] grid) {
         int maxDistance = -1;
 
         for (int i = 0;i < grid.length;i++){
@@ -79,6 +82,35 @@ public class LeetCode1162{
             }
         }
 
+        return distance;
+    }
+
+    public int maxDistance(int[][] grid) {
+        Queue<int[]> qu = new LinkedList<>();
+        for (int i = 0;i < grid.length;++i) {
+            for (int j = 0;j < grid[0].length;++j) {
+                if (grid[i][j] == 1) {
+                    qu.offer(new int[]{i,j});
+                }
+            }
+        }
+        int distance = -1;
+        int[][] dir = new int[][]{{-1,0},{0,-1},{0,1},{1,0}};
+        while (!qu.isEmpty()) {
+            int[] point = qu.poll();
+            for (int[] ar : dir) {
+                int nx = point[0] + ar[0];
+                int ny = point[1] + ar[1];
+                if (nx < 0 || nx >= grid.length || ny < 0 || ny >= grid[0].length || grid[nx][ny] != 0) {
+                    continue;
+                }
+                grid[nx][ny] = grid[point[0]][point[1]] + 1;
+                if (distance < grid[nx][ny]) {
+                    distance = grid[nx][ny] - 1;
+                }
+                qu.offer(new int[]{nx,ny});
+            }
+        }
         return distance;
     }
 }
