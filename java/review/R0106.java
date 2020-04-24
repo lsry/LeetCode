@@ -1,3 +1,5 @@
+package review;
+
 public class R0106 {
     public String compressString(String S) {
         int len = S.length();
