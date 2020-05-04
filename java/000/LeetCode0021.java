@@ -1,9 +1,3 @@
-class ListNode {
-    int val;
-    ListNode next;
-    ListNode(int x) { val = x; }
-}
-
 public class LeetCode0021{
     // 类似归并排序子过程，需要建立头结点
     public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
@@ -21,20 +15,7 @@ public class LeetCode0021{
             }
             h0 = h0.next;
         }
-        if (h2 == null){
-            while (h1 != null){
-                h0.next = h1;
-                h1 = h1.next;
-                h0 = h0.next;
-            }
-        }
-        if (h1 == null){
-            while (h2 != null){
-                h0.next = h2;
-                h0 = h0.next;
-                h2 = h2.next;
-            }
-        }
+        h0.next = h1 == null ? h2 : h1;
         return head.next;
     }
 }

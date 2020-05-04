@@ -1,3 +1,5 @@
+import java.util.PriorityQueue;
+
 /**
  * 分治算法，类似于归并排序，先两两合并，然后在合并结果
  */
@@ -49,8 +51,33 @@ public class LeetCode0023{
         }
     }
 
-    public ListNode mergeKLists(ListNode[] lists) {
+    public ListNode mergeKListsMerge(ListNode[] lists) {
         return mergeRecur(lists, 0, lists.length-1);
+    }
+
+    /**
+     * 优先队列，得到最小值
+     */
+    public ListNode mergeKLists(ListNode[] lists) {
+        PriorityQueue<ListNode> pq = new PriorityQueue<>((l1,l2) -> {
+            return l1.val - l2.val;
+        });
+        for (ListNode l : lists) {
+            if (l != null) {
+                pq.add(l);
+            }
+        }
+        ListNode head = new ListNode(0), cur = head;
+        while (!pq.isEmpty()) {
+            ListNode node = pq.poll();
+            if (node.next != null) {
+                pq.add(node.next);
+            }
+            node.next = cur.next;
+            cur.next = node;
+            cur = cur.next;
+        }
+        return head.next;
     }
 
     public static void main(String[] args) {

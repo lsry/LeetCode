@@ -6,7 +6,7 @@ public class LeetCode0033{
      * （3） 中间值较大，左边递增，右边先增加到最大值，后从最小值递增
      * （4） 恰好有序递增序列
      */
-    public int search(int[] nums, int target) {
+    public int searchDiscuss(int[] nums, int target) {
         if (nums == null || nums.length <= 0){
             return -1;
         }
@@ -30,6 +30,39 @@ public class LeetCode0033{
                     left = middle + 1;
                 } else {
                     right = middle;
+                }
+            }
+        }
+        return -1;
+    }
+
+    /**
+     * 使用二分，总有一半数组元素处于单调递增有序状态
+     * 在有序数组中判断目标元素是否存在，否则在另一半中查找
+     */
+    public int search(int[] nums, int target) {
+        if (nums == null || nums.length <= 0){
+            return -1;
+        }
+        int left = 0;
+        int right = nums.length - 1;
+        int middle = 0;
+        while (left <= right) {
+            middle = (left + right) / 2;
+            if (nums[middle] == target) {
+                return middle;
+            }
+            if (nums[0] <= nums[middle]) {
+                if (nums[0] <= target && target < nums[middle]) {
+                    right = middle - 1;
+                } else {
+                    left = middle + 1;
+                }
+            } else {
+                if (nums[middle] < target && target <= nums[right]) {
+                    left = middle + 1;
+                } else {
+                    right = middle - 1;
                 }
             }
         }
