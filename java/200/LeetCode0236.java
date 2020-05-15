@@ -1,12 +1,5 @@
-class TreeNode {
-    int val;
-    TreeNode left;
-    TreeNode right;
-    TreeNode(int x) { val = x; }
-}
-
 public class LeetCode0236{
-    public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
+    public TreeNode lowestCommonAncestor10ms(TreeNode root, TreeNode p, TreeNode q) {
         if (root == null){
             return null;
         } else if (root == p){
@@ -14,11 +7,11 @@ public class LeetCode0236{
         } else if (root == q){
             return find(q, p) ? q : null;
         }
-        TreeNode node = lowestCommonAncestor(root.left, p, q);
+        TreeNode node = lowestCommonAncestor10ms(root.left, p, q);
         if (node != null){
             return node;
         }
-        node = lowestCommonAncestor(root.right, p, q);
+        node = lowestCommonAncestor10ms(root.right, p, q);
         if (node != null){
             return node;
         }
@@ -37,6 +30,23 @@ public class LeetCode0236{
             return true;
         } else {
             return find(x.left, n) || find(x.right, n);
+        }
+    }
+
+    public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
+        if (root == null || root == p || root == q) {
+            return root;
+        }
+        TreeNode left = lowestCommonAncestor(root.left, p, q);
+        TreeNode right = lowestCommonAncestor(root.right, p, q);
+        if (left != null && right != null) {
+            return root;
+        } else if (left != null) {
+            return left;
+        } else if (right != null) {
+            return right;
+        } else {
+            return null;
         }
     }
 }

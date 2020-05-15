@@ -13,7 +13,7 @@ public class LeetCode0098{
         public Res(){}
     }
 
-    public boolean isValidBST(TreeNode root) {
+    public boolean isValidBSTBToT(TreeNode root) {
         return check(root).isvalid;
     }
 
@@ -82,5 +82,18 @@ public class LeetCode0098{
             }
             return res;
         }
+    }
+
+    public boolean isValidBST(TreeNode root) {
+        return root == null || isValidBST(root,Long.MIN_VALUE,Long.MAX_VALUE);
+    }
+
+    public boolean isValidBST(TreeNode root,long min,long max) {
+        if (root == null) {
+            return true;
+        }
+        return (root.left == null || (root.left.val < root.val && root.left.val > min))
+            && (root.right == null || (root.right.val > root.val && root.right.val < max))
+            && isValidBST(root.left, min, root.val) && isValidBST(root.right, root.val, max);
     }
 }
