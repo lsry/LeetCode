@@ -1,5 +1,5 @@
 public class LeetCode0004 {
-    public double findMedianSortedArrays(int[] nums1, int[] nums2) {
+    public double findMedianSortedArraysHalf(int[] nums1, int[] nums2) {
         int len1 = nums1.length;
         int len2 = nums2.length;
         if (len1 == 0 && len2 == 0){
@@ -47,6 +47,36 @@ public class LeetCode0004 {
             }
         }
         return 0.0;
+    }
+
+    public double findMedianSortedArrays(int[] nums1, int[] nums2){
+        if (nums1.length > nums2.length) {
+            return findMedianSortedArrays(nums2, nums1);
+        }
+        int n1 = nums1.length, n2 = nums2.length;
+        if (n1 + n2 == 0) {
+            return 0.0;
+        }
+        int left = 0, right = n1;
+        int lx = 0, rn = 0;
+        while (left <= right) {
+            int i = (left + right) / 2;
+            int j = (n1 + n2 + 1) / 2 - i;
+
+            int lix = i - 1 < 0 ? Integer.MIN_VALUE : nums1[i - 1];
+            int ljx = j - 1 < 0 ? Integer.MIN_VALUE : nums2[j - 1];
+            int rin = i >= n1 ? Integer.MAX_VALUE : nums1[i];
+            int rjn = j >= n2 ? Integer.MAX_VALUE : nums2[j];
+
+            if (lix <= rjn) {
+                lx = Math.max(lix, ljx);
+                rn = Math.min(rin, rjn);
+                left = i + 1;
+            } else {
+                right = i - 1;
+            }
+        }
+        return (n1 + n2) % 2 == 0 ? (lx + rn) / 2.0 : lx;
     }
 
     public static void main(String[] args) {

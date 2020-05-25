@@ -2,7 +2,7 @@ public class LeetCode0005{
     /**
      * 动态规划求最长回文子串
      */
-    public String longestPalindrome(String s) {
+    public String longestPalindromeCenterWide(String s) {
         if (s == null || s.length() <= 0){
             return "";
         }
@@ -67,6 +67,43 @@ public class LeetCode0005{
             return new int[]{l,r};
         }
         return new int[]{++l,--r};
+    }
+
+    /**
+     * 动态规划求解
+     * p(i, j) = {
+     *      true  when i == j
+     *      s[i] == s[j]  when j - i = 1
+     *      s[i] == s[j] && p(i+1,j-1) when j != i
+     * }
+     */
+    public String longestPalindrome(String s) {
+        if (s == null || s.length() == 0) {
+            return "";
+        }
+        int len = s.length();
+        boolean[][] dp = new boolean[len][len];
+        int st = 0, en = 0;
+        for (int l = 0;l < len;++l) {
+            for (int i = 0;i < len;++i) {
+                int j = i + l;
+                if (j >= len) {
+                    break;
+                }
+                if (l == 0) {
+                    dp[i][j] = true;
+                } else if (l == 1) {
+                    dp[i][j] = s.charAt(i) == s.charAt(j);
+                } else {
+                    dp[i][j] = s.charAt(i) == s.charAt(j) && dp[i + 1][j - 1];
+                }
+                if (dp[i][j] && l + 1 > en - st + 1) {
+                    st = i;
+                    en = j;
+                }
+            }
+        }
+        return s.substring(st, en + 1);
     }
 
     public static void main(String[] args) {
