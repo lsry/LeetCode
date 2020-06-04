@@ -2,7 +2,10 @@ import java.util.ArrayDeque;
 import java.util.Deque;
 
 public class LeetCode0394 {
-    public String decodeString(String s) {
+    /**
+     * 栈解析
+     */
+    public String decodeStringStack(String s) {
         if (s == null || s.length() <= 0){
             return "";
         }
@@ -50,5 +53,43 @@ public class LeetCode0394 {
             sb.append(s);
         } 
         return sb.toString();
+    }
+
+    private char[] src;
+    private int ptr;
+
+    public String decodeString(String s) {
+        src = s.toCharArray();
+        ptr = 0;
+        return getString().toString();
+    }
+
+    private StringBuilder getString() {
+        if (ptr >= src.length || src[ptr] == ']') {
+            return "";
+        }    
+        StringBuilder sb = new StringBuilder();    
+        if (Character.isDigit(src[ptr])) {
+            int repeat = getTimes();
+            ++ptr;
+            StringBuilder s = getString();
+            ++ptr;
+            while (repeat > 0) {
+                sb.append(s);
+            }
+        } else if (Character.isLetter(src[ptr])) {
+            sb.append(src[ptr]);
+            ++ptr;
+        }
+        return sb.append(getString());
+    }
+
+    private int getTimes() {
+        int res = 0;
+        while (ptr < src.length && Character.isDigit(src[ptr])) {
+            res = res * 10 + (src[ptr] - '0');
+            ++ptr;
+        }
+        return res;
     }
 }
