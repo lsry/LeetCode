@@ -1,6 +1,9 @@
 import java.util.Stack;
 
 public class LeetCode0739{
+    /**
+     * 单调递减栈
+     */
     public int[] dailyTemperatures(int[] T) {
         if (T == null || T.length <= 0){
             return new int[]{};
@@ -11,6 +14,7 @@ public class LeetCode0739{
             if (stack.empty()){
                 stack.push(i);
             } else {
+                // 栈中元素小于当前元素，出栈，并设置对应的天数
                 while (!stack.empty() && T[i] > T[stack.peek()]){
                     int x = stack.pop();
                     arr[x] = i - x;
@@ -18,13 +22,7 @@ public class LeetCode0739{
                 stack.push(i);
             }
         }
-        while (!stack.empty()){
-            int x = stack.pop();
-            arr[x] = 0;
-        }
-
         return arr;
-
     }
 
     public static void main(String[] args) {
