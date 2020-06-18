@@ -1,7 +1,5 @@
 package review;
 
-import java.util.Arrays;
-
 public class R40 {
     public static int partition(int[] arr,int p,int q){
 	    int pe = arr[q];
