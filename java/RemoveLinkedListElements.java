@@ -1,4 +1,6 @@
-public class RemoveLinkedListElements{
+import util.ListNode;
+
+public class RemoveLinkedListElements {
     public ListNode removeElements(ListNode head, int val) {
         if (head == null){
             return head;

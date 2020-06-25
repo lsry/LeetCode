@@ -1,5 +1,5 @@
 public class LeetCode0010{
-    public boolean isMatch(String s, String p) {
+    public boolean isMatchTailToHead(String s, String p) {
         int slength = s.length(),plength = p.length();
         boolean match[][] = new boolean[slength+1][plength+1];
         match[slength][plength] = true;
@@ -14,6 +14,37 @@ public class LeetCode0010{
             }
         }
         return match[0][0];
+    }
+
+    public boolean isMatch(String s, String p) {
+        int SN = s.length(), PN = p.length();
+        boolean flags[][] = new boolean[SN+1][PN+1];
+        flags[0][0] = true;
+        for (int si = 0;si <= SN;++si) {
+            for (int pi = 1;pi <= PN;++pi) {
+                if (p.charAt(pi - 1) == '*') {
+                    if (match(s,si,p,pi - 1)) {
+                        flags[si][pi] = flags[si - 1][pi] || flags[si][pi - 2];
+                    } else {
+                        flags[si][pi] = flags[si][pi - 2];
+                    }
+                } else {
+                    if (match(s,si,p,pi)) {
+                        flags[si][pi] = flags[si - 1][pi - 1];
+                    }
+                }
+            }
+        }
+        return flags[SN][PN];
+    }
+    private boolean match(String s, int si, String p, int pi) {
+        if (si == 0) {
+            return false;
+        }
+        if (p.charAt(pi - 1) == '.') {
+            return true;
+        }
+        return s.charAt(si - 1) == p.charAt(pi - 1);
     }
 
     public static void main(String[] args) {
