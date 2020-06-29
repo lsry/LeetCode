@@ -1,3 +1,5 @@
+package review;
+
 public class R46 {
     public int translateNum(int num) {
         return counts(String.valueOf(num), 0);
