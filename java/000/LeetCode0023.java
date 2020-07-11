@@ -1,5 +1,7 @@
 import java.util.PriorityQueue;
 
+import util.ListNode;
+
 /**
  * 分治算法，类似于归并排序，先两两合并，然后在合并结果
  */
@@ -78,9 +80,5 @@ public class LeetCode0023{
             cur = cur.next;
         }
         return head.next;
-    }
-
-    public static void main(String[] args) {
-        
     }
 }
