@@ -1,3 +1,4 @@
+import util.TreeNode;
 public class LeetCode0101 {
     public boolean isSymmetric(TreeNode root) {
         return root == null || childTree(root.left, root.right);

@@ -2,7 +2,7 @@ public class LeetCode0096{
     /**
      * 对于数 1,..n ，不同的数如 i 作为根时，两边含有 1,..,i-1 和 i+1,...,n 分别计算两边个数，相乘即可
      */
-    public int numTrees(int n) {
+    public int numTreesRecur(int n) {
         int[] arr = new int[n+1];
         arr[0] = 1;
         arr[1] = 1;
@@ -25,5 +25,17 @@ public class LeetCode0096{
             arr[x] = count;
             return arr[x];
         }
+    }
+
+    public int numTrees(int n) {
+        int dp[] = new int[n + 1];
+        dp[0] = 1;
+        dp[1] = 1;
+        for (int i = 2;i <= n;++i) {
+            for (int j = 0;j < i;++j) {
+                dp[i] += dp[j] * dp[i - 1 - j];
+            }
+        }
+        return dp[n];
     }
 }
