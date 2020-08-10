@@ -1,5 +1,5 @@
 public class LeetCode0415{
-    public String addStrings(String num1, String num2) {
+    public String addStringsComplicated(String num1, String num2) {
         String min, max;
         if (num1.length() < num2.length()) {
             min = num1;
@@ -28,5 +28,24 @@ public class LeetCode0415{
             sBuilder.append(C);
         }
         return sBuilder.reverse().toString();
+    }
+
+    public String addStrings(String num1, String num2) {
+        StringBuilder sb = new StringBuilder();
+        int carry = 0;
+        int i = num1.length() - 1, j = num2.length() - 1;
+        while (i >= 0 || j >= 0 || carry > 0) {
+            if (i >= 0) {
+                carry += num1.charAt(i) - '0';
+                --i;
+            }
+            if (j >= 0) {
+                carry += num2.charAt(j) - '0';
+                --j;
+            }
+            sb.append(carry % 10);
+            carry = carry / 10;
+        }
+        return sb.reverse().toString();
     }
 }

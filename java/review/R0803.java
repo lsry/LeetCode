@@ -1,3 +1,5 @@
+package review;
+
 public class R0803 {
     public int findMagicIndexIter(int[] nums) {
         for (int i = 0;i < nums.length;++i) {

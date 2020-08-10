@@ -1,6 +1,8 @@
-public class LeetCode0337{
+import util.TreeNode;
+
+public class LeetCode0337 {
     
-    public int rob(TreeNode root) {
+    public int robBrutce(TreeNode root) {
         return Math.max(treeSum2(root, true),treeSum2(root, false));
     }
 
@@ -13,7 +15,7 @@ public class LeetCode0337{
         } else if (selected) {
             return root.val + treeSum2(root.left, !selected) + treeSum2(root.right, !selected);
         } else {
-            return rob(root.left) + rob(root.right);
+            return robBrutce(root.left) + robBrutce(root.right);
         } 
     }
 
@@ -32,5 +34,25 @@ public class LeetCode0337{
             int rightn = treeSum(root.right, false);
             return Math.max(lefts, leftn) + Math.max(rights, rightn);
         } 
+    }
+
+    /**
+     * dynamic program
+     * 对任何一个结点，均可以偷或者不偷
+     * 1）不偷，则等于左子节点最大值和右子节点最大值之和
+     * 2）偷，则等于该结点值和不偷左右结点值之和
+     */
+    public int rob(TreeNode root) {
+        int[] res = robbed(root);
+        return Math.max(res[0], res[1]);
+    }
+
+    public int[] robbed(TreeNode root) {
+        if (root == null) {
+            return new int[]{0,0};
+        }
+        int[] lv = robbed(root.left);
+        int[] rv = robbed(root.right);
+        return new int[]{root.val + lv[1] + rv[1],Math.max(lv[0], lv[1]) + Math.max(rv[0], rv[1])};
     }
 }

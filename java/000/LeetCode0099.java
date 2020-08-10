@@ -1,40 +1,46 @@
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+
+import util.TreeNode;
 
 public class LeetCode0099{
-    LinkedList<TreeNode> stack = new LinkedList<>(), uppers = new LinkedList<>(),lowers = new LinkedList<>();
 
-    public void update(TreeNode root, TreeNode lower, TreeNode upper) {
-        stack.add(root);
-        lowers.add(lower);
-        uppers.add(upper);
-      }
-
+    /**
+     * 考虑中序遍历结果，会破坏递增序列
+     * 存在 A[i] > A[i + 1], A[y] > A[y + 1]
+     * 对应结点 A[i], A[y + 1]
+     */
     public void recoverTree(TreeNode root) {
-        TreeNode lower = null, upper = null, iNode;
-        update(root, lower, upper);
-
-        while (!stack.isEmpty()) {
-            root = stack.poll();
-            lower = lowers.poll();
-            upper = uppers.poll();
-
-            if (root == null) continue;
-            iNode = root;
-            if (lower != null && iNode.val <= lower.val) {
-                int temp = iNode.val;
-                iNode.val = lower.val;
-                lower.val = temp;
+        List<TreeNode> miTree = new ArrayList<>();
+        inorder(root, miTree);
+        int x = -1, y = -1;
+        int i = 0;
+        for (;i < miTree.size() - 1;++i) {
+            if (miTree.get(i).val > miTree.get(i + 1).val) {
+                x = i;
+                y = i + 1;
                 break;
             }
-            if (upper != null && iNode.val >= upper.val) {
-                int temp = iNode.val;
-                iNode.val = upper.val;
-                upper.val = temp;
+        }
+        for (i = i + 1;i < miTree.size() - 1;++i) {
+            if (miTree.get(i).val > miTree.get(i + 1).val) {
+                y = i + 1;
                 break;
             }
-            update(root.right, iNode, upper);
-            update(root.left, lower, iNode);
-
-        }  
+        }
+        if (x != -1) {
+            int val = miTree.get(x).val;
+            miTree.get(x).val = miTree.get(y).val;
+            miTree.get(y).val = val;
+        }
     } 
+
+    private void inorder(TreeNode root,List<TreeNode> miTree) {
+        if (root == null) {
+            return;
+        }
+        inorder(root.left, miTree);
+        miTree.add(root);
+        inorder(root.right, miTree);
+    }
 }

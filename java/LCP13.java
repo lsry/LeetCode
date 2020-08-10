@@ -114,7 +114,7 @@ public class LCP13 {
             Arrays.fill(ret[i], -1);
         }
         ret[point[0]][point[1]] = 0;
-        Queue<int[]> qu = new LinkedList();
+        Queue<int[]> qu = new LinkedList<>();
         qu.offer(point);
         while (!qu.isEmpty()) {
             int[] cur = qu.poll();
