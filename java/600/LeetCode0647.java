@@ -1,43 +1,29 @@
 public class LeetCode0647{
+
+    /**
+     * 中心拓展求回文子串
+     * 分为奇数长度和偶数长度
+     */
     public int countSubstrings(String s) {
         if (s == null || s.length() <= 0){
             return 0;
         }
-        int[][] arr = new int[s.length()][s.length()];
-        for (int i = 0;i < s.length();i++){
-            valiate(arr, s, i, i);
-            valiate(arr, s, i, i+1);
-        }
         int count = 0;
-        for (int i = 0;i < s.length();i++){
-            for(int j = 0;j < s.length();j++){
-                if (arr[i][j] == 1){
-                    count++;
-                }
-            }
+        for (int i = 0;i < s.length();++i) {
+            count += palindromicCount(s, i, i);
+            count += palindromicCount(s, i, i + 1);
         }
         return count;
     }
 
-    public void valiate(int[][] arr,String s,int left,int right){
-        if (left < 0 || right >= s.length() || arr[left][right] != 0){
-            return ;
+    private int palindromicCount(String s,int left,int right) {
+        int count = 0;
+        while (left >= 0 && right < s.length() && s.charAt(left) == s.charAt(right)) {
+            --left;
+            ++right;
+            ++count;
         }
-        while (left >= 0 && right < s.length()){
-            if (arr[left][right] == 1 || s.charAt(left) == s.charAt(right)){
-                arr[left][right] = 1;
-                left--;
-                right++;
-            } else {
-                arr[left][right] = -1;
-                break;
-            }
-        }
-        while (left >= 0 && right < s.length()){
-            arr[left][right] = -1;
-            left--;
-            right++;
-        }
+        return count;
     }
 
     public static void main(String[] args) {
