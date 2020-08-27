@@ -1,3 +1,7 @@
+package L200;
+
+import util.ListNode;
+
 public class LeetCode0206 {
     /**
      * 循环解法，运用头插法

@@ -1,3 +1,5 @@
+package L200;
+
 public class LeetCode0221 {
     public int maximalSquare(char[][] matrix) {
         int maxArea = 0;        

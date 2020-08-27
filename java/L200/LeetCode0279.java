@@ -1,4 +1,6 @@
-public class LeetCode0279{
+package L200;
+
+public class LeetCode0279 {
     public int numSquares(int n) {
         int[] dp = new int[n + 1];
         dp[0] = 0; dp[1] = 1;

@@ -1,4 +1,6 @@
-public class LeetCode0233{
+package L200;
+
+public class LeetCode0233 {
     /**
      * 1. 只承受得住千万级别
      */

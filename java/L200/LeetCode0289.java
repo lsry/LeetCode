@@ -1,4 +1,6 @@
-public class LeetCode0289{
+package L200;
+
+public class LeetCode0289 {
     // 非原址操作
     public void gameOfLifeOutPlace(int[][] board) {
         int[][] panel = new int[board.length][board[0].length];

@@ -1,3 +1,5 @@
+package L200;
+
 public class LeetCode0287 {
     public int findDuplicate(int[] nums) {
         int left = 0, right = nums.length - 1;

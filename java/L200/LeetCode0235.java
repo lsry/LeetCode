@@ -1,4 +1,7 @@
-public class LeetCode0235{
+package L200;
+
+import util.TreeNode;
+public class LeetCode0235 {
     public TreeNode lowestCommonAncestor1(TreeNode root, TreeNode p, TreeNode q) {
         if (root == null){
             return root;

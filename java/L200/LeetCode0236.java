@@ -1,4 +1,8 @@
-public class LeetCode0236{
+package L200;
+
+import util.TreeNode;
+
+public class LeetCode0236 {
     public TreeNode lowestCommonAncestor10ms(TreeNode root, TreeNode p, TreeNode q) {
         if (root == null){
             return null;

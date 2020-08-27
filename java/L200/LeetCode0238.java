@@ -1,3 +1,5 @@
+package L200;
+
 public class LeetCode0238 {
     public int[] productExceptSelf(int[] nums) {
         int[] out = new int[nums.length];
