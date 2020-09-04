@@ -1,4 +1,6 @@
-public class LeetCode0392{
+package L300;
+
+public class LeetCode0392 {
     /**
      * 双指针，判断 t 中是否存在一种 s
      */

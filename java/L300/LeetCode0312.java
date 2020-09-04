@@ -1,3 +1,5 @@
+package L300;
+
 public class LeetCode0312 {
     public int maxCoins(int[] nums) {
         int[] ns = new int[nums.length + 2];

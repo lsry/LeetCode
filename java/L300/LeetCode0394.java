@@ -1,3 +1,5 @@
+package L300;
+
 import java.util.ArrayDeque;
 import java.util.Deque;
 
@@ -66,7 +68,7 @@ public class LeetCode0394 {
 
     private StringBuilder getString() {
         if (ptr >= src.length || src[ptr] == ']') {
-            return "";
+            return new StringBuilder();
         }    
         StringBuilder sb = new StringBuilder();    
         if (Character.isDigit(src[ptr])) {

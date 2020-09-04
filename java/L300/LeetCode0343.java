@@ -1,3 +1,5 @@
+package L300;
+
 public class LeetCode0343 {
     public int integerBreak(int n) {
         int[] dp = new int[n + 1];

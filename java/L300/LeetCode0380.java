@@ -1,4 +1,6 @@
-public class LeetCode0380{
+package L300;
+
+public class LeetCode0380 {
     public static void main(String[] args) {
         RandomizedSet set = new RandomizedSet();
         boolean res = set.insert(1);

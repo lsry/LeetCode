@@ -1,3 +1,5 @@
+package L300;
+
 public class LeetCode0300 {
     public int lengthOfLIS(int[] nums) {
         int[] lis = new int[nums.length];

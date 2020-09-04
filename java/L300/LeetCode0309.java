@@ -1,3 +1,5 @@
+package L300;
+
 public class LeetCode0309 {
     public int maxProfit(int[] prices) {
         if (prices == null || prices.length <= 1) {

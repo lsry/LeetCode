@@ -1,4 +1,8 @@
-public class LeetCode0328{
+package L300;
+
+import util.ListNode;
+
+public class LeetCode0328 {
     public ListNode oddEvenList(ListNode head) {
         if (head == null){
             return head;
