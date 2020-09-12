@@ -1,3 +1,5 @@
+package L400;
+
 public class LeetCode0409 {
     public int longestPalindrome(String s) {
         if (s == null || s.length() == 0) {

@@ -1,4 +1,6 @@
-public class LeetCode0494{
+package L400;
+
+public class LeetCode0494 {
     public int findTargetSumWays(int[] nums, int S) {
         int sum = 0,zeros = 0;
         for (int x : nums){

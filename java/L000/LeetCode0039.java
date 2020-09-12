@@ -25,11 +25,28 @@ public class LeetCode0039{
         return lli;
     }
 
-    public List<List<Integer>> combinationSum(int[] candidates, int target) {
+    public List<List<Integer>> combinationSumTrace(int[] candidates, int target) {
         return combine(candidates, target, 0);
     }
 
-    public static void main(String[] args) {
-        
+    public List<List<Integer>> combinationSum(int[] candidates, int target) {
+        List<List<Integer>> res = new ArrayList<>();
+        List<Integer> path = new ArrayList<>();
+        trace(res, path, candidates, 0, target);
+        return res;
+    }
+
+    public void trace(List<List<Integer>> res,List<Integer> path,int[] candidates,int index,int target) {
+        if (target < 0) {
+            return;
+        } else if (target == 0) {
+            res.add(new ArrayList<>(path));
+            return;
+        } 
+        for (int i = index;i < candidates.length;++i) {
+            path.add(candidates[i]);
+            trace(res, path, candidates, i, target - candidates[i]);
+            path.remove(path.size() - 1);
+        }
     }
 }

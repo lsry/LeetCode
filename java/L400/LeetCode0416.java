@@ -1,4 +1,6 @@
-public class LeetCode0416{
+package L400;
+
+public class LeetCode0416 {
     public boolean canPartition(int[] nums) {
         int sum = 0;
         for (int n : nums){

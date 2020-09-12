@@ -1,3 +1,5 @@
+package L400;
+
 public class LeetCode0492 {
     public int[] constructRectangle(int area) {
         int L = (int) Math.sqrt(area);

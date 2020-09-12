@@ -1,3 +1,5 @@
+package L400;
+
 public class LeetCode0400 {
     public int findNthDigit(int n) {
         long N = n;

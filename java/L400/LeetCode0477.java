@@ -1,4 +1,6 @@
-public class LeetCode0477{
+package L400;
+
+public class LeetCode0477 {
     public int totalHammingDistance(int[] nums) {
         String[] bins = new String[nums.length];
         for (int i = 0;i < nums.length;i++){

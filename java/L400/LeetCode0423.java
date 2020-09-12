@@ -1,4 +1,6 @@
-public class LeetCode0423{
+package L400;
+
+public class LeetCode0423 {
     public String originalDigits(String s) {
         int[] chars = new int[26 + 'a'];
         for (char ch : s.toCharArray()){

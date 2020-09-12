@@ -1,4 +1,6 @@
-public class LeetCode0476{
+package L400;
+
+public class LeetCode0476 {
     public int findComplement(int num) { 
         if (num == 0) {
             return 1;

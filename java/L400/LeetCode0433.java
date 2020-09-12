@@ -1,4 +1,6 @@
-public class LeetCode0433{
+package L400;
+
+public class LeetCode0433 {
     private boolean[] visited;
     public int minMutation(String start, String end, String[] bank) {
         if (bank == null || bank.length == 0){

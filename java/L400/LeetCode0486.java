@@ -1,4 +1,6 @@
-public class LeetCode0486{
+package L400;
+
+public class LeetCode0486 {
     
     public boolean PredictTheWinnerRecur(int[] nums) {
         // 对于偶数个数字的数组，玩家1一定获胜。

@@ -1,4 +1,6 @@
-public class LeetCode0459{
+package L400;
+
+public class LeetCode0459 {
     public boolean repeatedSubstringPatternDoubleIter(String s) {
         String sub = "";
         final int N = s.length();

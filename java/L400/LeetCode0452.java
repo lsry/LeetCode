@@ -1,3 +1,5 @@
+package L400;
+
 import java.util.Arrays;
 
 public class LeetCode0452{
