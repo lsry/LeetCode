@@ -1,5 +1,6 @@
-public class WordSearch{
+package L000;
 
+public class LeetCode0079 {
     public boolean search(char[][] board,int si,int sj,int index,char[] words){
         if (index == words.length){
             return true;
@@ -36,9 +37,45 @@ public class WordSearch{
         return false;
     }
 
+    private final static int[][] indics = new int[][]{{-1,0},{1,0},{0,-1},{0,1}};
+    public boolean existDFS8ms(char[][] board, String word) {
+        boolean[][] visits = new boolean[board.length][board[0].length];
+        for (int i = 0;i < board.length;++i) {
+            for (int j = 0;j < board[0].length;++j) {
+                visits[i][j] = true;
+                if (dfs(board, visits, i, j, word, 0)) {
+                    return true;
+                }
+                visits[i][j] = false;
+            }
+        }
+        return false;
+    }
+    private boolean dfs(char[][] board,boolean[][] visits,int x, int y,String word,int index) {
+        if (index >= word.length() || (index == word.length() - 1 && word.charAt(index) == board[x][y])) {
+            return true;
+        }
+        if (word.charAt(index) != board[x][y]) {
+            return false;
+        }
+        for (int[] indic : indics) {
+            int nx = indic[0] + x;
+            int ny = indic[1] + y;
+            if (nx >= 0 && nx < board.length && ny >= 0 && ny < board[0].length && !visits[nx][ny]) {
+                visits[nx][ny] = true;
+                if (dfs(board, visits, nx, ny, word, index + 1)) {
+                    return true;
+                } else {
+                    visits[nx][ny] = false;
+                }
+            }
+        }
+        return false;
+    }
+
     public static void main(String[] args) {
         char[][] chs = new char[][]{{'A','B','C','E'},{'S','F','C','S'},{'A','D','E','E'}};
-        WordSearch ws = new WordSearch();
+        LeetCode0079 ws = new LeetCode0079();
         System.out.println("ABCCED true: " + ws.exist(chs, "ABCCED"));
         System.out.println("SEE true: " + ws.exist(chs, "SEE"));
         System.out.println("ABCD false: " + ws.exist(chs, "ABCD"));
