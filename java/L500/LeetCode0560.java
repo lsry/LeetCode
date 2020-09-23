@@ -1,3 +1,5 @@
+package L500;
+
 import java.util.HashMap;
 
 public class LeetCode0560{

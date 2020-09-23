@@ -1,4 +1,4 @@
-
+package L500;
 
 public class LeetCode0546 {
     public int removeBoxes(int[] boxes) {

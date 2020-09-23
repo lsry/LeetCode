@@ -1,4 +1,6 @@
-public class LeetCode0565{
+package L500;
+
+public class LeetCode0565 {
     // 依次按照数组内容访问元素，同时记录该位置可到达的最大长度，选取最大值
     public int arrayNesting2ms(int[] nums) {
         int[] dp = new int[nums.length];

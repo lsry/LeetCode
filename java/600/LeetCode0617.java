@@ -1,4 +1,11 @@
-public class LeetCode0617{
+import util.TreeNode;
+
+public class LeetCode0617 {
+    /**
+     * 考虑两个根节点，
+     * 1）存在空结点，返回不空的结点
+     * 2）均不空，则将两个节点值相加，返回
+     */
     public TreeNode mergeTrees(TreeNode t1, TreeNode t2) {
         TreeNode tree = null;
         if (t1 == null && t2 == null){

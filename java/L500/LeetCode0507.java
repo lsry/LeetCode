@@ -1,4 +1,6 @@
-public class LeetCode0507{
+package L500;
+
+public class LeetCode0507 {
     public boolean checkPerfectNumber(int num) {
         if (num <= 1){
             return false;

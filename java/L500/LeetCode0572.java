@@ -1,3 +1,7 @@
+package L500;
+
+import util.TreeNode;
+
 public class LeetCode0572 {
     public boolean isSubtree(TreeNode s, TreeNode t) {
         if (t == null) {

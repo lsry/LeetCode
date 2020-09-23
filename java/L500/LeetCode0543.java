@@ -1,4 +1,8 @@
-public class LeetCode0543{
+package L500;
+
+import util.TreeNode;
+
+public class LeetCode0543 {
     public int diameterOfBinaryTree1(TreeNode root) {
         if (root == null){
             return 0;

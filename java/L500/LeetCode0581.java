@@ -1,3 +1,5 @@
+package L500;
+
 import java.util.Arrays;
 
 public class LeetCode0581{

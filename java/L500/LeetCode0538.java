@@ -1,4 +1,12 @@
-public class LeetCode0538{
+package L500;
+
+import util.TreeNode;
+
+public class LeetCode0538 {
+    /**
+     * 后中序遍历，右 -> 根 -> 左
+     * 需要记录前次遍历节点值，然后加起来
+     */
     public TreeNode convertBST(TreeNode root) {
         convert(0, root);
         return root;

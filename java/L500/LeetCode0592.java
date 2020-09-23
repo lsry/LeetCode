@@ -1,3 +1,5 @@
+package L500;
+
 public class LeetCode0592 {
     private int[] res = new int[]{0,1};
 

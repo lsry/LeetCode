@@ -1,4 +1,6 @@
-public class LeetCode0523{
+package L500;
+
+public class LeetCode0523 {
     public boolean checkSubarraySum(int[] nums, int k) {
         int[] dp = new int[nums.length];
         dp[0] = nums[0];

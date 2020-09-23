@@ -1,3 +1,5 @@
+package L500;
+
 public class LeetCode0557 {
     public String reverseWords(String s) {
         char[] chars = s.toCharArray();
