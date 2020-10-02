@@ -1,3 +1,5 @@
+package L600;
+
 public class LeetCode0680 {
     public boolean validPalindrome(String s) {
         int left = 0, right = s.length() - 1;

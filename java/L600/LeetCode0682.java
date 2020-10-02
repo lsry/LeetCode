@@ -1,3 +1,5 @@
+package L600;
+
 public class LeetCode0682 {
     public int calPoints(String[] ops) {
         int points = 0;

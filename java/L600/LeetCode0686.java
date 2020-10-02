@@ -1,4 +1,6 @@
-public class LeetCode0686{
+package L600;
+
+public class LeetCode0686 {
     public int repeatedStringMatch(String A, String B) {
         int index = -1;
         StringBuilder sb = new StringBuilder(A);

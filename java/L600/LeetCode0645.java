@@ -1,3 +1,5 @@
+package L600;
+
 public class LeetCode0645 {
     public int[] findErrorNums(int[] nums) {
        int[] temp = new int[nums.length];

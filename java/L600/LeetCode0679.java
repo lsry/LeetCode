@@ -1,3 +1,5 @@
+package L600;
+
 public class LeetCode0679 {
     private static final double EPLSION = 1e-6;
     private static final double TARGET = 24.0;

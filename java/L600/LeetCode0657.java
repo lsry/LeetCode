@@ -1,3 +1,5 @@
+package L600;
+
 public class LeetCode0657 {
     public boolean judgeCircle(String moves) {
         int x = 0, y = 0;

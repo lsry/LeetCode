@@ -1,4 +1,6 @@
-public class LeetCode0622{
+package L600;
+
+public class LeetCode0622 {
 
 }
 

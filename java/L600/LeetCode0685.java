@@ -1,3 +1,5 @@
+package L600;
+
 public class LeetCode0685 {
     class UnionFind {
         private int[] ids;

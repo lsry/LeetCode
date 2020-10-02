@@ -1,3 +1,5 @@
+package L600;
+
 public class LeetCode0650 {
     public int minSteps5ms(int n) {
         if (n == 1) {

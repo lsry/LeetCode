@@ -1,4 +1,6 @@
-public class LeetCode0647{
+package L600;
+
+public class LeetCode0647 {
 
     /**
      * 中心拓展求回文子串

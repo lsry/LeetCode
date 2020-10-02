@@ -2,6 +2,10 @@ package L200;
 
 import util.TreeNode;
 public class LeetCode0235 {
+    /**
+     * 由于二叉搜索树已经对节点有序，则根据值的不同在左右半边搜索
+     */
+    
     public TreeNode lowestCommonAncestor1(TreeNode root, TreeNode p, TreeNode q) {
         if (root == null){
             return root;

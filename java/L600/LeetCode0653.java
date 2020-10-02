@@ -1,4 +1,8 @@
-public class LeetCode0653{
+package L600;
+
+import util.TreeNode;
+
+public class LeetCode0653 {
     public boolean findTarget(TreeNode root, int k) {
         return find(root, root, k);
     }

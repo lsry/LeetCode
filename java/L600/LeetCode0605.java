@@ -1,4 +1,6 @@
-public class LeetCode0605{
+package L600;
+
+public class LeetCode0605 {
     public boolean canPlaceFlowers(int[] flowerbed, int n) {
         int plants = 0;
         for (int i = 0;i < flowerbed.length;i++){
