@@ -1,4 +1,8 @@
-public class LeetCode0700{
+package L700;
+
+import util.TreeNode;
+
+public class LeetCode0700 {
     public TreeNode searchBST(TreeNode root, int val) {
         TreeNode cur = root;
         while (cur != null){

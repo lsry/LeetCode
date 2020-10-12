@@ -1,3 +1,5 @@
+package L700;
+
 import java.util.Stack;
 
 public class LeetCode0739{

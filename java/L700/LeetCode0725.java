@@ -1,4 +1,8 @@
-public class LeetCode0725{
+package L700;
+
+import util.ListNode;
+
+public class LeetCode0725 {
     public ListNode[] splitListToParts(ListNode root, int k) {
         ListNode[] nodes = new ListNode[k];
         ListNode head = root;

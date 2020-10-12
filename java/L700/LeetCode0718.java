@@ -1,3 +1,5 @@
+package L700;
+
 public class LeetCode0718 {
     /**
      * 类似最长公共子串

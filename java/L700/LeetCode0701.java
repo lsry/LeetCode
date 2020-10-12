@@ -1,3 +1,5 @@
+package L700;
+
 import util.TreeNode;
 
 public class LeetCode0701 {

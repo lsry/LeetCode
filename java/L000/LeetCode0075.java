@@ -1,6 +1,11 @@
 package L000;
 
 public class LeetCode0075 {
+    /**
+     * 将在遍历中数组划分为三个部分，
+     * prev: 0 的最后一个元素
+     * last: 1 的第一个元素
+     */
     public void sortColors(int[] nums) {        
         int prev = -1;
         int last = nums.length;
