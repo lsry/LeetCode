@@ -1,3 +1,5 @@
+package L800;
+
 public class LeetCode0836 {
     public boolean isRectangleOverlap(int[] rec1, int[] rec2) {
         // 考虑不重叠的情况

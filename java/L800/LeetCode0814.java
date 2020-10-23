@@ -1,4 +1,8 @@
-public class LeetCode0814{
+package L800;
+
+import util.TreeNode;
+
+public class LeetCode0814 {
     public TreeNode pruneTree(TreeNode root) {
         if (root == null){
             return root;

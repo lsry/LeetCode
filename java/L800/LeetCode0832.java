@@ -1,4 +1,6 @@
-public class LeetCode0832{
+package L800;
+
+public class LeetCode0832 {
     public int[][] flipAndInvertImage(int[][] A) {
         for (int i = 0;i < A.length;i++){
             int left = 0;

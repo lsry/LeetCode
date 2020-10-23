@@ -1,4 +1,6 @@
-public class LeetCode0807{
+package L800;
+
+public class LeetCode0807 {
     public int maxIncreaseKeepingSkyline(int[][] grid) {
         int[] across = new int[grid.length];
         int[] vertical = new int[grid[0].length];

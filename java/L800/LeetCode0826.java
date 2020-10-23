@@ -1,3 +1,5 @@
+package L800;
+
 import java.util.Arrays;
 
 public class LeetCode0826{

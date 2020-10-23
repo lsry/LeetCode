@@ -1,3 +1,5 @@
+package L800;
+
 public class LeetCode0887 {
     public int superEggDrop(int K, int N) {
         int[][] dp = new int[K + 1][N + 1];

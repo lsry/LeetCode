@@ -1,4 +1,6 @@
-public class LeetCode0825{
+package L800;
+
+public class LeetCode0825 {
     // exceed time limit
     public int numFriendRequestsDoubleIter(int[] ages) {
         int send = 0;

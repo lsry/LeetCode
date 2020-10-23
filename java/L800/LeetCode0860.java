@@ -1,3 +1,5 @@
+package L800;
+
 public class LeetCode0860{
     public boolean lemonadeChange(int[] bills) {
         int[] money = new int[3];

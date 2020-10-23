@@ -1,3 +1,5 @@
+package L800;
+
 public class LeetCode0892 {
     /**
      * 每一个正方体贡献 6 个面，当相邻正方体接触时，会减少两个面

@@ -1,3 +1,5 @@
+package L800;
+
 public class LeetCode0896 {
     public boolean isMonotonic(int[] A) {
         if (A.length <= 1){
