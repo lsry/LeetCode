@@ -1,5 +1,9 @@
+package L900;
+
 import java.util.Deque;
 import java.util.LinkedList;
+
+import util.TreeNode;
 
 public class LeetCode0965 {
     public boolean isUnivalTree(TreeNode root) {

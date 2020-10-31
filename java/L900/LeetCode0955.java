@@ -1,3 +1,5 @@
+package L900;
+
 import java.util.Arrays;
 
 public class LeetCode0955{

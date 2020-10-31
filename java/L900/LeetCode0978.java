@@ -1,4 +1,6 @@
-public class LeetCode0978{
+package L900;
+
+public class LeetCode0978 {
     public int maxTurbulenceSize(int[] A) {
         return helper(A,0,A.length-1);
     }

@@ -1,7 +1,10 @@
 import java.util.Arrays;
 
 public class LeetCode1024 {
-    public int videoStitching(int[][] clips, int T) {
+    /**
+     * 0-1 package 
+     */
+    public int videoStitching01(int[][] clips, int T) {
         if (clips == null || clips.length == 0) {
             return -1;
         }
@@ -41,5 +44,32 @@ public class LeetCode1024 {
         } else {
             return dp[clips.length - 1][T];
         }
+    }
+
+    /**
+     * 贪心
+     * 首先计算对于每一个时间点来说，能达到的最右时间点
+     * 考虑对于每一个时间点，更新每次能到达的最右时间点，遍历完成后，能到达 T，则成功
+     * 其次记录上一个最右时间点，若当前时间点大于等于上一个时间，则计数加一
+     */
+    public int videoStitching(int[][] clips, int T) {
+        int[] rends = new int[T];
+        for (int[] clip : clips) {
+            if (clip[0] < T) {
+                rends[clip[0]] = Math.max(rends[clip[0]], clip[1]);
+            }
+        }
+        int last = 0, pre = 0, res = 0;
+        for (int i = 0;i < T;++i) {
+            last = Math.max(last, rends[i]);
+            if (last == i) {  // 当前最远到 i，无法再往下移动
+                return -1;
+            }
+            if (i == pre) {
+                ++res;
+                pre = last;
+            }
+        }
+        return res;
     }
 }

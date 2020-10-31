@@ -1,3 +1,5 @@
+package L900;
+
 public class LeetCode0977 {
     public int[] sortedSquares(int[] A) {
         int index = 0;

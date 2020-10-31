@@ -1,3 +1,5 @@
+package L900;
+
 public class LeetCode0983 {
     public int mincostTickets(int[] days, int[] costs) {
         int[][] dp = new int[days.length][3];

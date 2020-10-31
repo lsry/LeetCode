@@ -1,3 +1,5 @@
+package L900;
+
 public class LeetCode0925 {
     public boolean isLongPressedName(String name, String typed) {
         int i = 0, j = 0;

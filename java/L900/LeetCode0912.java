@@ -1,3 +1,5 @@
+package L900;
+
 public class LeetCode0912 {
     /**
      * Quick Sort

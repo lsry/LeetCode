@@ -1,3 +1,5 @@
+package L900;
+
 public class LeetCode0999 {
     public int numRookCaptures(char[][] board) {
         int cap = 0;
