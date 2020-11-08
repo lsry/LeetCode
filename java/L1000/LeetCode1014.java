@@ -1,3 +1,5 @@
+package L1000;
+
 public class LeetCode1014 {
     /**
      * 由 ans = A[i] + A[j] + i - j

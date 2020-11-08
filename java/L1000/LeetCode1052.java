@@ -1,4 +1,6 @@
-public class LeetCode1052{
+package L1000;
+
+public class LeetCode1052 {
     public int maxSatisfied(int[] customers, int[] grumpy, int X) {
         int maxSatisfied = 0;
         for (int i = 0;i < customers.length && i < X;i++){

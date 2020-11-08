@@ -1,3 +1,5 @@
+package L1000;
+
 public class LeetCode1071 {
     public String gcdOfStrings(String str1, String str2) {
         int N1 = str1.length(), N2 = str2.length();

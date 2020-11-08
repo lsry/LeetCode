@@ -1,3 +1,5 @@
+package L1000;
+
 public class LeetCode1093 {
     public double[] sampleStats(int[] count) {
         long sum = 0;

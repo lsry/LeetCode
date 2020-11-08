@@ -1,3 +1,5 @@
+package L1000;
+
 public class LeetCode1013 {
     public boolean canThreePartsEqualSum(int[] A) {
         if (A.length < 3) {

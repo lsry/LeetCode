@@ -1,4 +1,6 @@
-public class LeetCode1017{
+package L1000;
+
+public class LeetCode1017 {
     // 关键在于保证余数为{0,1}
     public String baseNeg2(int N) {
         if (N == 0){

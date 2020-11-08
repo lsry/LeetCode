@@ -1,3 +1,5 @@
+package L1000;
+
 public class LeetCode1025 {
     public boolean divisorGame(int N) {
         boolean[] dp = new boolean[N + 1];

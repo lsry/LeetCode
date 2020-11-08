@@ -1,3 +1,5 @@
+package L1000;
+
 import util.TreeNode;
 
 public class LeetCode1028 {
