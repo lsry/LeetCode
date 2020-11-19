@@ -4,10 +4,14 @@ import java.util.ArrayDeque;
 import java.util.Deque;
 
 public class LeetCode0402{
+    /**
+     * 比较两个数字序列，除相同左边数字外，最左边的数字越小则数小
+     * 在对每一位比较时，删除已经使用过且比当前数字大的左边数字
+     */
     public String removeKdigits(String num, int k) {
-        if (num == null || num.isEmpty() || k < 0 || k >= num.length()){
+        if (num == null || num.isEmpty() || k >= num.length()){
             return "0";
-        } else if (k == 0){
+        } else if (k <= 0){
             return num;
         }
         Deque<Character> stack = new ArrayDeque<>();
@@ -26,10 +30,8 @@ public class LeetCode0402{
                         k--;
                     }
                 }
-                stack.addFirst(c2);
-            } else {
-                stack.addFirst(c2);
-            }
+            } 
+            stack.addFirst(c2);
         }
 
         while (k != 0){

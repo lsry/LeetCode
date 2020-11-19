@@ -4,8 +4,7 @@ public class LeetCode0031 {
     /**
      * 1. 从右到左寻找一个位置 i, 使得 a[i-1] < a[i] , 可以得到 a[i] ... a[n] 是递减序列
      * 2. 从 i 开始向右寻找一个位置 j，使得 a[j] = min{a[i], ... , a[n]} 且 a[j] > a[i] , 然后交换 a[i-1] ，a[j]   
-     * 3. 逆序 a[i] ... a[n]  
-     * @param nums
+     * 3. 逆序 a[i] ... a[n] 
      */
     public void nextPermutation(int[] nums) {
         if (nums == null || nums.length <= 1){
