@@ -1,4 +1,7 @@
-public class LeetCode1115 {}
+package L1100;
+
+public class LeetCode1115 {
+}
 
 class FooBar {
     private int n;

@@ -1,4 +1,7 @@
-public class LeetCode1114 {}
+package L1100;
+
+public class LeetCode1114 {
+}
 
 class Foo {
     private volatile boolean one = false;

@@ -1,3 +1,5 @@
+package L1100;
+
 public class LeetCode1160 {
     public int countCharacters(String[] words, String chars) {
         int[] sou = new int[26];

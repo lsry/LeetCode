@@ -1,3 +1,5 @@
+package L1100;
+
 public class LeetCode1131 {
     public int maxAbsValExpr(int[] arr1, int[] arr2) {
         int min1 = Integer.MAX_VALUE, min2 = Integer.MAX_VALUE, min3 = Integer.MAX_VALUE, min4 = Integer.MAX_VALUE;

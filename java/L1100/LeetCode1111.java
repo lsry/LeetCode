@@ -1,3 +1,5 @@
+package L1100;
+
 import java.util.Deque;
 import java.util.LinkedList;
 

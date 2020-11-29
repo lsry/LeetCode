@@ -1,3 +1,5 @@
+package L1100;
+
 public class LeetCode1103 {
     public int[] distributeCandies(int candies, int num_people) {
         int[] res = new int[num_people];

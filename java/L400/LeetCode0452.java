@@ -6,7 +6,7 @@ public class LeetCode0452{
     public int findMinArrowShots(int[][] points) {
         // 1. 按照左端点排序
         Arrays.sort(points, (a,b) -> {
-            return a[0] - b[0];
+            return Integer.compare(a[0], b[0]);
         });
         int arrows = 0;
         int index = 0;

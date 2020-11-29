@@ -1,4 +1,8 @@
-public class LeetCode1145{
+package L1100;
+
+import util.TreeNode;
+
+public class LeetCode1145 {
     public boolean btreeGameWinningMove(TreeNode root, int n, int x) {
         TreeNode xNode = findByValue(root, x);
         int xNum = getTreeNums(xNode);
