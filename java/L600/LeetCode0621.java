@@ -3,7 +3,10 @@ package L600;
 import java.util.Arrays;
 
 public class LeetCode0621 {
-    public int leastInterval(char[] tasks, int n) {
+    /**
+     * 模拟整个执行过程，每执行一个当前具有最大次数的任务，在后面找 n 个任务或者待命
+     */
+    public int leastIntervalSimu(char[] tasks, int n) {
         if (tasks == null || tasks.length <= 0){
             return 0;
         } else if (n == 0){
@@ -36,6 +39,29 @@ public class LeetCode0621 {
             Arrays.sort(arr);
         }
         return time;
+    }
+
+    /**
+     * 考虑形成一个以最大次数的行，(n + 1) 列的矩阵，将任务按照列依次填充
+     */
+    public int leastInterval(char[] tasks, int n) {
+        int[] freqs = new int[26];
+        for (char c : tasks) {
+            freqs[c - 'A'] += 1;
+        }
+        int maxCount = 0;
+        for (int count : freqs) {
+            if (count > maxCount) {
+                maxCount = count;
+            }
+        }
+        int count = 0;
+        for (int freq : freqs) {
+            if (freq == maxCount) {
+                ++count;
+            }
+        }
+        return Math.max((maxCount - 1) * (n + 1) + count, tasks.length);
     }
 
     public static void main(String[] args) {
