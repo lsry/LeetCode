@@ -3,6 +3,9 @@ package L600;
 import java.util.LinkedList;
 
 public class LeetCode0649{
+    /**
+     * 每一轮每个人将后面最近的对方阵营人员禁止，直到最后某一方完全出局
+     */
     public String predictPartyVictory(String senate) {
         LinkedList<Integer> rqueue = new LinkedList<>();
         LinkedList<Integer> dqueue = new LinkedList<>();

@@ -2,7 +2,7 @@ package L800;
 
 public class LeetCode0860{
     public boolean lemonadeChange(int[] bills) {
-        int[] money = new int[3];
+        int[] money = new int[2];
         for (int bill : bills){
             if (bill == 5){
                 money[0] ++;
@@ -17,10 +17,8 @@ public class LeetCode0860{
                 if (money[0] > 0 && money[1] > 0){
                     money[0]--;
                     money[1]--;
-                    money[2]++;
                 } else if (money[0] >= 3){
                     money[0] -= 3;
-                    money[2] ++;
                 } else {
                     return false;
                 }
