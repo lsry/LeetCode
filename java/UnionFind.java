@@ -80,14 +80,16 @@ public class UnionFind{
         int pid = weight_find(p);
         int qid = weight_find(q);
         if (pid != qid) {
-            if (weights[p] < weights[q]) {
-                ids[pid] = qid;
-                weights[q] += weights[p];
-            } else {
-                ids[qid] = pid;
-                weights[p] += weights[q];
-            }
-            count--;
+            this.count -= 1;
+        }
+        // 秩（当前树深度）低的接到秩大的树上
+        if (weights[pid] <= weights[qid]) {
+            ids[pid] = qid;
+        } else {
+            ids[qid] = pid;
+        }
+        if (pid != qid && weights[pid] == weights[qid]) {
+            weights[qid] += 1; // 当权重相等时，接到 qid 代表的树上
         }
     }
 
