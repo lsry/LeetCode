@@ -1,3 +1,5 @@
+package L1300;
+
 import java.util.Arrays;
 
 public class LeetCode1365 {

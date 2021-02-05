@@ -1,4 +1,6 @@
-public class LeetCode1275{
+package L1200;
+
+public class LeetCode1275 {
     public String tictactoe(int[][] moves) {
         if (moves.length < 5) {
             return "Pending";

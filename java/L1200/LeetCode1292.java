@@ -1,3 +1,5 @@
+package L1200;
+
 public class LeetCode1292 {
     public int maxSideLength(int[][] mat, int threshold) {
         int H = mat.length, W = mat[0].length;

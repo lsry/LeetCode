@@ -1,3 +1,5 @@
+package L1200;
+
 public class LeetCode1248 {
     public int numberOfSubarrays(int[] nums, int k) {
         int nsub = 0;

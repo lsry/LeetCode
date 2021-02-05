@@ -1,3 +1,5 @@
+package L1300;
+
 public class LeetCode1370 {
     public String sortString(String s) {
         int[] chars = new int[26];
