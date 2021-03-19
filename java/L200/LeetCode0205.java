@@ -1,6 +1,5 @@
 package L200;
 
-import java.util.Arrays;
 import java.util.HashMap;
 
 public class LeetCode0205 {
