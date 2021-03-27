@@ -1,4 +1,6 @@
-public class SetMatrixZeroes{
+package L000;
+
+public class LeetCode0073{
 
     public  void setZeroes(int[][] matrix) {
         if (matrix.length <= 0){
@@ -62,7 +64,7 @@ public class SetMatrixZeroes{
 
     public static void main(String[] args) {
         int[][] arr = new int[][]{{1,0,3}};
-        new SetMatrixZeroes().setZeroes(arr);
+        new LeetCode0073().setZeroes(arr);
         for (int[] ar : arr){
             for (int a : ar){
                 System.out.print(a + "\t");
