@@ -7,7 +7,7 @@ import java.util.Map;
 
 public class LeetCode0208{}
 
-class Trie {
+class TrieMap {
     private static class Node{
         public boolean isWord;
         public Map<Character,Node> next;
@@ -25,7 +25,7 @@ class Trie {
     private Node root;
 
     /** Initialize your data structure here. */
-    public Trie() {
+    public TrieMap() {
         root = new Node();
     }
     
@@ -96,5 +96,70 @@ class Trie {
         } else {
             cur.isWord = false;
         }
+    }
+}
+
+class Trie {
+    private class TrieNode {
+        boolean isWord;
+        TrieNode[] next;
+
+        public TrieNode(boolean isWord) {
+            this.isWord = isWord;
+            next = new TrieNode[26];
+        }
+    }
+
+    private TrieNode root;
+    /** Initialize your data structure here. */
+    public Trie() {
+        root = new TrieNode(false);
+    }
+    
+    /** Inserts a word into the trie. */
+    public void insert(String word) {
+        TrieNode node = root;
+        for (char c : word.toCharArray()) {
+            int i = c - 'a';
+            if (node.next[i] == null) {
+                node.next[i] = new TrieNode(false);
+            }
+            node = node.next[i];
+        }
+        node.isWord = true;
+    }
+    
+    /** Returns if the word is in the trie. */
+    public boolean search(String word) {
+        TrieNode node = root;
+        for (char c : word.toCharArray()) {
+            int i = c - 'a';
+            if (node.next[i] == null) {
+                return false;
+            }
+            node = node.next[i];
+        }
+        return node.isWord;
+    }
+    
+    /** Returns if there is any word in the trie that starts with the given prefix. */
+    public boolean startsWith(String prefix) {
+        TrieNode node = root;
+        for (char c : prefix.toCharArray()) {
+            int i = c - 'a';
+            if (node.next[i] == null) {
+                return false;
+            }
+            node = node.next[i];
+        }
+        if (node.isWord) {
+            return true;
+        }
+        for (int i = 0;i < 26;++i) {
+            if (node.next[i] != null) {
+                return true;
+            }
+        }
+        return false;
     }
 }
