@@ -16,13 +16,16 @@ public class KMP{
             if (j == -1 || str.charAt(i) == pattern.charAt(j)){
                 i++;
                 j++;
-            } else {
+            } else { // 用前缀覆盖相同的后缀，然后比较下一个字符
                 j = next[j];
             }
         }
         return (j == pLen) ? (i - j) : -1;
     }
 
+    /**
+     * 计算最大公共前后缀长度，不包括当前位置
+     */
     public void getNext(int[] next,String pattern) {
         next[0] = -1;
         for (int i = 1;i < pattern.length();i++){
