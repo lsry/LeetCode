@@ -1,7 +1,15 @@
 package L000;
 
+import java.util.HashMap;
+
 public class LeetCode0013 {
-    public int romanToInt(String s) {
+    /**
+     * 判断可能出现的每一种情况
+     * 1） CD 或 DC
+     * 2） XL 或 LX
+     * 3） IV 或 VI
+     */
+    public int romanToIntIF(String s) {
         int n = 0;
         for (int i = 0;i < s.length();i++){
             if (s.charAt(i) == 'M'){
@@ -48,6 +56,35 @@ public class LeetCode0013 {
             }
         }
         return n;
+    }
+
+
+    /**
+     * 构造映射每一个数的 map，然后从左到右，如果小于右边则减，大于则加
+     */
+    private static final HashMap<Character,Integer> map = new HashMap<>(16);
+    static {
+        map.put('I', 1);
+        map.put('V', 5);
+        map.put('X', 10);
+        map.put('L', 50);
+        map.put('C', 100);
+        map.put('D', 500);
+        map.put('M', 1000);
+    }
+    public int romanToInt(String s) {
+        int res = 0, LN = s.length();
+        for (int i = 0;i < LN;++i) {
+            int cur = map.get(s.charAt(i));
+            if (i == LN - 1) {
+                res += cur;
+            } else if (cur < map.get(s.charAt(i + 1))) {
+                res -= cur;
+            } else {
+                res += cur;
+            }
+        }
+        return res;
     }
 
     public static void main(String[] args) {

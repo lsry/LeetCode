@@ -22,6 +22,8 @@ public class LeetCode0015 {
                     if (!result.contains(ai)){  // 判断是否含重复元组
                         result.add(ai);
                     }
+                    j++;
+                    k--;
                 } else if (nums[j] + nums[k] < twoSum){
                     j++;
                 } else {
