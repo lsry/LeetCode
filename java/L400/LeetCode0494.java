@@ -1,6 +1,14 @@
 package L400;
 
 public class LeetCode0494 {
+    /**
+     * 由于数字在添加符号的情况下可正可负,
+     * 不妨考虑数组和为 SUM，添加负号的数字和为 neg，添加正号数字和为 SUM - neg,
+     * 则 S = (SUM - neg) - neg = SUM - 2 * neg,
+     * neg = (SUM - S) / 2,
+     * 这表示 neg 应该是偶数且 neg >= 0,  
+     * 接下来只要从数组中选择出和为 neg 的方案数即为结果；
+     */
     public int findTargetSumWays(int[] nums, int S) {
         int sum = 0,zeros = 0;
         for (int x : nums){
