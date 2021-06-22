@@ -1,22 +1,66 @@
 package L000;
 
 public class LeetCode0065 {
-    public int minPathSum(int[][] grid) {
-        if (grid.length == 0) {
-            return 0;
+    public boolean isNumber(String s) {
+        int index = 0;
+        int N = s.length();
+        char[] chs = s.toCharArray();
+        if (index < N && (chs[index] == '+' || chs[index] == '-')) {
+            ++index;
         }
-        int[] dp = new int[grid[0].length];
-        dp[0] = grid[0][0];
-        for (int i = 1;i < grid[0].length;++i) {
-            dp[i] = grid[0][i] + dp[i - 1];
-        }
-        for (int i = 1;i < grid.length;++i) {
-            for (int j = 0;j < grid[0].length;++j) {
-                int left = j - 1 >= 0 ? dp[j - 1] : Integer.MAX_VALUE;
-                int top = dp[j];
-                dp[j] = grid[i][j] + Math.min(left, top);
+        boolean hasInt = false; // 小数点前有数字
+        if (index < N && Character.isDigit(chs[index])) {
+            hasInt = true;
+            while (index < N && Character.isDigit(chs[index])) {
+                ++index;
             }
         }
-        return dp[dp.length - 1];
+        boolean hasRat = false;
+        if (index < N && chs[index] == '.') {
+            ++index;
+            if (!hasInt && index == N) {
+                return false;
+            }
+            if (index < N && Character.isDigit(chs[index])) {
+                hasRat = true;
+                while (index < N && Character.isDigit(chs[index])) {
+                    ++index;
+                }
+            }
+            hasRat = hasRat || hasInt; // 形成小数
+        }
+        if (index < N && (chs[index] == 'e' || chs[index] == 'E')) {
+            ++index;
+            boolean hasEnum = false;
+            if (index < N && (chs[index] == '+' || chs[index] == '-')) {
+                ++index;
+            }
+            if (index < N && Character.isDigit(chs[index])) {
+                ++index;
+                hasEnum = true; // E 后面有数字
+                while (index < N && Character.isDigit(chs[index])) {
+                    ++index;
+                }
+            }
+            if (!(hasInt || hasRat) || !hasEnum) {
+                return false;
+            }
+        }
+        return index == N;
+    }
+
+    public static void main(String[] args) {
+        LeetCode0065 code = new LeetCode0065();
+        String[] valid = new String[]{"2", "0089", "-0.1", "+3.14", "4.", "-.9", "2e10", "-90E3", "3e+7", "+6e-1", "53.5e93", "-123.456e789"};
+        System.out.println("valid num: ");
+        for (int i = 0;i < valid.length;++i) {
+            System.out.println(valid[i] + ": " + code.isNumber(valid[i]));
+        }
+
+        String[] invalid = new String[]{"abc", "1a", "1e", "e3", "99e2.5", "--6", "-+3", "95a54e53",".",".e1"};
+        System.out.println("\ninvalid num: ");
+        for (int i = 0;i < invalid.length;++i) {
+            System.out.println(invalid[i] + ": " + code.isNumber(invalid[i]));
+        }
     }
 }
