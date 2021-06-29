@@ -1,3 +1,5 @@
+package Contest;
+
 public class C23D {
     public int countLargestGroup(int n) {
         int[] arr = new int[50];
