@@ -60,6 +60,11 @@ class TimeMapTLE {
     }
 }
 
+/**
+ * 键值对使用 Map 结构，对于同一个键，可使用 List 存储
+ * 由于时间戳严格递增，可以直接在放入新数据时添加到 List 尾部
+ * 查找数据使用二分查找
+ */
 class TimeMap {
     class Node{
         public String value;

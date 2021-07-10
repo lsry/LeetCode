@@ -34,6 +34,11 @@ public class LeetCode0451{
         }
         
     }
+
+    /**
+     * 记录每个字符出现频率，然后根据频率排序
+     * 此题并未限定字符范围
+     */
     public String frequencySort(String s) {
         Map<Character,Integer> mch = new HashMap<>();
         for (char c : s.toCharArray()){
