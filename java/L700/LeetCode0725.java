@@ -3,6 +3,10 @@ package L700;
 import util.ListNode;
 
 public class LeetCode0725 {
+    /**
+     * 每个部分应该保存 n / k 个；
+     * 余下的 n % k 个依次放入 前面的链表中
+     */
     public ListNode[] splitListToParts(ListNode root, int k) {
         ListNode[] nodes = new ListNode[k];
         ListNode head = root;
