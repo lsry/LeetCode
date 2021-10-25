@@ -1,6 +1,9 @@
 package L400;
 
 public class LeetCode0476 {
+    /**
+     * 依次遍历每一位取反
+     */
     public int findComplement(int num) { 
         if (num == 0) {
             return 1;
