@@ -1,6 +1,12 @@
 package L400;
 
 public class LeetCode0400 {
+    /**
+     * 1-9 > 9
+     * 10-99 > 90
+     * 100-999 > 900
+     * ...
+     */
     public int findNthDigit(int n) {
         long N = n;
         long sum = 0;
