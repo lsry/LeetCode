@@ -1,6 +1,10 @@
 package L800;
 
 public class LeetCode0807 {
+    /**
+     * 东西，南北天际线相同
+     * 每一个可增加的最大高度不超过东西，南北的最小值
+     */
     public int maxIncreaseKeepingSkyline(int[][] grid) {
         int[] across = new int[grid.length];
         int[] vertical = new int[grid[0].length];
