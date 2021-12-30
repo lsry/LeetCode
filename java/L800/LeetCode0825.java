@@ -17,6 +17,9 @@ public class LeetCode0825 {
         return send;
     }
 
+    /**
+     * 将用户归一为年龄段分层，问题转换为不同年龄之间是否发请求
+     */
     public int numFriendRequests(int[] ages){
         int[] counts = new int[121];
         for (int i : ages){

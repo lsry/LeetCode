@@ -1,6 +1,6 @@
 package L1600;
 
-public class LeetCode01603 {}
+public class LeetCode1603 {}
 
 class ParkingSystem {
 
