@@ -2,7 +2,7 @@ package L1200;
 
 import java.util.HashMap;
 
-public class LeetCode01218 {
+public class LeetCode1218 {
     public int longestSubsequence(int[] arr, int difference) {
         if (arr == null) {
             return 0;
