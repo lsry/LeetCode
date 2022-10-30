@@ -2,6 +2,7 @@
 using std::vector;
 
 #include <limits>
+#include <algorithm>
 
 class Solution {
 public:
