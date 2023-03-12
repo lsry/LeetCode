@@ -37,6 +37,27 @@ public class KMP{
         }
     }
 
+    /**
+     * Dragon book P87
+     */
+    public int[] getNext2(String pattern) {
+        int[] f = new int[pattern.length()];
+        int t = -1;
+        f[0] = -1;
+        for (int s = 0;s < pattern.length() - 1;++s) {
+            while (t > -1 && pattern.charAt(s + 1) != pattern.charAt(t + 1)) {
+                t = f[t];
+            }
+            if (pattern.charAt(s + 1) == pattern.charAt(t + 1)) {
+                ++t;
+                f[s + 1] = t;
+            } else {
+                f[s + 1] = -1;
+            }
+        }
+        return f;
+    }
+
     public void testNext(String pattern){
         int[] next = new int[pattern.length()];
         getNext(next, pattern);
@@ -54,5 +75,10 @@ public class KMP{
         System.out.println(kmp.match("nnnjceiofhassssscnieo", "sscn"));
         System.out.println(kmp.match("aaaaaaaaaaaa", "aa"));
         System.out.println(kmp.match("aaaaaaaaaaaa", "aaa"));
+
+        // 3.4.3 test next2
+        System.out.println(Arrays.toString(kmp.getNext2("abababaab")));
+        System.out.println(Arrays.toString(kmp.getNext2("aaaaaa")));
+        System.out.println(Arrays.toString(kmp.getNext2("abbaabb")));
     }
 }
