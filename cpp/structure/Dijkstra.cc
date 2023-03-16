@@ -1,4 +1,4 @@
-#include <fast_io.h>
+#include <iostream>
 #include <vector>
 #include <array>
 #include <utility>
@@ -57,12 +57,12 @@ int main(int argc, char const *argv[]) {
     std::vector<std::vector<int>> edges{{0, 1, 2}, {0, 2, 6}, {1, 3, 5}, {2, 3, 8}, {3, 5, 15}, {3, 4, 10}, {4, 5, 6}, {5, 6, 6}, {4, 6, 2}};
     std::vector<Path> dis{dijkstra(edges, 7, 0)};
     for (Path const &p : dis) {
-        print(0, "->", p.node, ", cost: ", p.cost, "\n", "path:");
+        std::cout << 0 << "->" << p.node << ", cost: " << p.cost << "\n" << "path:"  << std::endl;
         for (const int x : p.nodes) {
-            print(x, "->");
+            std::cout << x << "->"  << std::endl;
         }
-        print("\n");
+        std::cout << "\n" << std::endl;
     }
-    print("\n");
+    std::cout << std::endl;
     return 0;
 }

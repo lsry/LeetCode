@@ -1,4 +1,4 @@
-#include <fast_io.h>
+#include <iostream>
 #include <vector>
 
 // plain binary search to get index where vi[index] == value or -1
@@ -48,20 +48,20 @@ int binarySearchForLessEqual(std::vector<int> const &vi, int value) {
 int main(int argc, char const *argv[])
 {
     std::vector<int> vi{1,3,5,7,9,11,13,15};
-    println("equal:\nfind 0: ", binarySearch(vi, 0));
-    println("find 3: ", binarySearch(vi, 3));
-    println("find 4: ", binarySearch(vi, 4));
-    println("find 16: ", binarySearch(vi, 16));
+    std::cout << "equal:\nfind 0: " << binarySearch(vi, 0) << std::endl;
+    std::cout << "find 3: " << binarySearch(vi, 3) << std::endl;
+    std::cout << "find 4: " << binarySearch(vi, 4) << std::endl;
+    std::cout << "find 16: " << binarySearch(vi, 16) << std::endl;
 
-    println("gerater equal:\nfind 0: ", binarySearchForEqualGreater(vi, 0));
-    println("find 3: ", binarySearchForEqualGreater(vi, 3));
-    println("find 4: ", binarySearchForEqualGreater(vi, 4));
-    println("find 16: ", binarySearchForEqualGreater(vi, 16));
+    std::cout << "gerater equal:\nfind 0: " << binarySearchForEqualGreater(vi, 0) << std::endl;
+    std::cout << "find 3: " << binarySearchForEqualGreater(vi, 3) << std::endl;
+    std::cout << "find 4: " << binarySearchForEqualGreater(vi, 4) << std::endl;
+    std::cout << "find 16: " << binarySearchForEqualGreater(vi, 16) << std::endl;
 
-    println("Less equal:\nfind 0: ", binarySearchForLessEqual(vi, 0));
-    println("find 3: ", binarySearchForLessEqual(vi, 3));
-    println("find 4: ", binarySearchForLessEqual(vi, 4));
-    println("find 16: ", binarySearchForLessEqual(vi, 16));
+    std::cout << "Less equal:\nfind 0: " << binarySearchForLessEqual(vi, 0) << std::endl;
+    std::cout << "find 3: " << binarySearchForLessEqual(vi, 3) << std::endl;
+    std::cout << "find 4: " << binarySearchForLessEqual(vi, 4) << std::endl;
+    std::cout << "find 16: " << binarySearchForLessEqual(vi, 16) << std::endl;
     return 0;
 }
 

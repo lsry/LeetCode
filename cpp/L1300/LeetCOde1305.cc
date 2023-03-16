@@ -4,7 +4,7 @@ using std::stack;
 #include <vector>
 using std::vector;
 
-#include "heads/tree_node.h"
+#include "../heads/tree_node.h"
 
 class Solution {
 public:
