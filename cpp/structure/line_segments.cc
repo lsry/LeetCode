@@ -1,4 +1,9 @@
 #include <memory>
+#include <vector>
+
+/**
+ * 指针法构建线段树，不需要预先分配空间
+ */
 
 class LineSegmentTree;
 
@@ -100,3 +105,9 @@ public:
         return ans;
     }
 };
+
+/**
+ * 數組法構建綫段樹
+ * LeetCode1157
+ */
+
