@@ -5,6 +5,7 @@ using std::endl;
 
 #include<vector>
 using std::vector;
+#include <unordered_map>
 
 /*
 * vector<int>& nums : the arrays of Inputting
@@ -29,8 +30,17 @@ vector<int> twoSum(vector<int>& nums, int target) {
   return ive;
 }
 
-int main()
-{
-    
-	return 0;
-}
+class Solution {
+public:
+    vector<int> twoSum(vector<int>& nums, int target) {
+        std::unordered_map<int, int> map;
+        for (int i{0};i < nums.size();++i) {
+            auto it{map.find(target- nums[i])};
+            if (it != map.end()) {
+               return {it->second, i};
+            }
+            map[nums[i]] = i;
+        }
+        return {};
+    }
+};

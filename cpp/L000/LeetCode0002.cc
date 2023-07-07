@@ -1,12 +1,6 @@
 #include <iostream>
 using namespace std;
-
-struct ListNode
-{
-    int val;
-    ListNode *next;
-    ListNode(int x) : val(x), next(NULL) {}
-};
+#include "heads/list_node.h"
 
 int getLength(ListNode *l)
 {
@@ -61,8 +55,33 @@ ListNode *addTwoNumbers(ListNode *l1, ListNode *l2)
         return l2;
 }
 
-int main()
-{
-
-    return 0;
-}
+class Solution {
+public:
+    ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
+        ListNode head(0);
+        int carry{0};
+        ListNode *hp = &head;
+        for (;l1 != nullptr || l2 != nullptr;) {
+            if (l1 == nullptr) {
+                carry += l2->val;
+                l2 = l2->next;
+            } else if (l2 == nullptr) {
+                carry += l1->val;
+                l1 = l1->next;
+            } else {
+                carry = carry + l1->val + l2->val;
+                l1 = l1->next;
+                l2 = l2->next;
+            }
+            hp->next = new ListNode(carry % 10);
+            carry /= 10;
+            hp = hp->next;
+        }
+        while (carry != 0) {
+            hp->next = new ListNode(carry % 10);
+            carry /= 10;
+            hp = hp->next;
+        }
+        return head.next;
+    }
+};
