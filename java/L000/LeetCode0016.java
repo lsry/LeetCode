@@ -35,8 +35,4 @@ public class LeetCode0016 {
         }
         return cloest;
     }
-
-    public static void main(String[] args) {
-        
-    }
 }
