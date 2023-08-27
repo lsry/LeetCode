@@ -1,6 +1,6 @@
 #include <iostream>
 using namespace std;
-#include "heads/list_node.h"
+#include "../heads/list_node.h"
 
 int getLength(ListNode *l)
 {
