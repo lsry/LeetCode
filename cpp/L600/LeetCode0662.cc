@@ -1,5 +1,5 @@
 #include <queue>
-#include "heads/tree_node.h"
+#include "../heads/tree_node.h"
 
 class Solution {
 public:
