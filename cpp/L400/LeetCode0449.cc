@@ -4,7 +4,7 @@ using std::string;
 #include <queue>
 using std::queue;
 
-#include "heads/tree_node.h"
+#include "../heads/tree_node.h"
 
 class Codec {
 public:
