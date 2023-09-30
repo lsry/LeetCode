@@ -54,6 +54,6 @@ public class LeetCode0786 {
         LeetCode0786 lc = new LeetCode0786();
         int[] arr = new int[] {1, 2, 3, 5};
         int k = 3;
-        int[] res = lc.kthSmallestPrimeFraction(arr, k);
+        lc.kthSmallestPrimeFraction(arr, k);
     }
 }

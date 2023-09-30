@@ -2,7 +2,8 @@ package L300;
 
 public class LeetCode0390 {
     public int lastRemaining(int n) {
-        int a1 = 1, an = n;
+        int a1 = 1;
+        int an = n;
         int k = 0;
         int cnt = n, step = 1;
         while (cnt > 1) {

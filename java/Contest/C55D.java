@@ -7,7 +7,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.PriorityQueue;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 public class C55D {
@@ -45,10 +44,6 @@ public class C55D {
             s = s.substring(0, i) + s.substring(i + x);
         }
         return s;
-    }
-
-    public long maxAlternatingSum(int[] nums) {
-
     }
 }
 

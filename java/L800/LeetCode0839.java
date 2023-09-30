@@ -123,9 +123,4 @@ public class LeetCode0839{
         }
         return uf.getCount();
     }
-
-    public static void main(String[] args) {
-        String[] a = {"kccomwcgcs","socgcmcwkc","sgckwcmcoc","coswcmcgkc","cowkccmsgc","cosgmccwkc",
-                      "sgmkwcccoc","coswmccgkc","kowcccmsgc","kgcomwcccs"};
-    }
 }

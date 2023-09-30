@@ -1,3 +1,5 @@
+package Contest;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,6 +16,7 @@ public class C183S {
         for (int i : nums) {
             sum += i;
         }
+        return res;
     }
 
     public int numSteps(String s) {
