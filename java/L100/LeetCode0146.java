@@ -1,9 +1,19 @@
 package L100;
 
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 
-public class LeetCode0146 {}
+public class LeetCode0146 {
+    public static void main(String[] args) {
+        LRUCache2 cache2 = new LRUCache2(2);
+        cache2.put(1, 1);
+        cache2.put(2, 2);
+        cache2.put(3, 3);
+        System.out.println(cache2.get(1));
+        System.out.println(cache2.get(2));
+    }
+}
 
 class LRUCache {
     class DNode {
@@ -69,5 +79,23 @@ class LRUCache {
             addToHead(cur);
             cache.put(key, cur);
         }
+    }
+}
+
+class LRUCache2 extends LinkedHashMap<Integer, Integer> {
+    private int capacity;
+
+    public LRUCache2(int capacity) {
+        super(capacity, 0.75F, true);
+        this.capacity = capacity;
+    }
+
+    public Integer get(Integer key) {
+        return super.getOrDefault(key, -1);
+    }
+
+    @Override
+    protected boolean removeEldestEntry(Map.Entry<Integer, Integer> eldest) {
+        return size() > capacity;
     }
 }
