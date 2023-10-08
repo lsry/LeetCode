@@ -1,4 +1,4 @@
-#include "heads/list_node.h"
+#include "../heads/list_node.h"
 
 class Solution {
 public:
