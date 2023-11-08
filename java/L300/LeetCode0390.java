@@ -3,7 +3,6 @@ package L300;
 public class LeetCode0390 {
     public int lastRemaining(int n) {
         int a1 = 1;
-        int an = n;
         int k = 0;
         int cnt = n, step = 1;
         while (cnt > 1) {
@@ -12,13 +11,9 @@ public class LeetCode0390 {
                     a1 += step;
                 } else {
                     a1 += step;
-                    an -= step;
                 }
             } else {
-                if (cnt % 2 == 0) {
-                    an -= step;
-                } else {
-                    an -= step;
+                if (cnt % 2 != 0) {
                     a1 += step;
                 }
             }
