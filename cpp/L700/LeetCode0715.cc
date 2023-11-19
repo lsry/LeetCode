@@ -1,10 +1,8 @@
-#include <memory>
-
 class RangeModule;
 
 class DataNode {
     friend class RangeModule;
-    std::shared_ptr<DataNode> left, right;
+    DataNode *left, *right;
     bool cover;
     int addFlag;
 public:
@@ -12,15 +10,15 @@ public:
 };
 
 class RangeModule {
-    std::shared_ptr<DataNode> root;
+    DataNode *root;
     constexpr static int N{1000000000};
 
-    void pushDown(std::shared_ptr<DataNode> node, int start, int end) {
+    void pushDown(DataNode *node, int start, int end) {
         if (node->left == nullptr) {
-            node->left = std::make_shared<DataNode>();
+            node->left = new DataNode();
         }
         if (node->right == nullptr) {
-            node->right = std::make_shared<DataNode>();
+            node->right = new DataNode();
         }
         if (node->addFlag == 0) {
             return;
@@ -32,7 +30,7 @@ class RangeModule {
         node->addFlag = 0;
     }
 
-    void update(std::shared_ptr<DataNode> node, int start, int end, int left, int right, int val) {
+    void update(DataNode *node, int start, int end, int left, int right, int val) {
         if (left <= start && end <= right) {
             node->cover = val == 1;
             node->addFlag = val;
@@ -49,11 +47,11 @@ class RangeModule {
         pushUp(node);
     }
 
-    void pushUp(std::shared_ptr<DataNode> node) {
+    void pushUp(DataNode *node) {
         node->cover = node->left->cover && node->right->cover;
     }
 
-    bool query(std::shared_ptr<DataNode> node, int start, int end, int left, int right) {
+    bool query(DataNode *node, int start, int end, int left, int right) {
         if (left <= start && end <= right) {
             return node->cover;
         }
@@ -69,7 +67,7 @@ class RangeModule {
         return ans;
     }
 public:
-    RangeModule() : root(std::make_shared<DataNode>()) {}
+    RangeModule() : root(new DataNode()) {}
     
     void addRange(int left, int right) {
         update(root, 1, N, left, right - 1, 1);
