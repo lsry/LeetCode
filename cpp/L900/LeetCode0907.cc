@@ -2,7 +2,6 @@
 using std::vector;
 
 #include <stack>
-#include <numeric>
 
 /**
  * @brief 在求左右最小值時，由於重複數字存在，要麽在左邊，或右邊取等號，不可同時取等
