@@ -3,7 +3,7 @@
 
 class Solution {
 public:
-    int maximumSwap(int num) {
+    int maximumSwap2(int num) {
         if (num <= 11) {
             return num;
         }
@@ -27,5 +27,33 @@ public:
         *fn = *sn;
         *sn = c;
         return std::stoi(ns);
+    }
+
+    int maximumSwap(int num) {
+        if (num <= 11) {
+            return num;
+        }
+        std::string ns = std::to_string(num);
+        int nz = ns.size();
+        for (int i = 0;i < nz;++i) {
+            if (changeLetter(ns, i)) {
+                break;
+            }
+        }
+        return std::stoi(ns);
+    }
+
+    bool changeLetter(std::string &ns, int id) {
+        int eid = id;
+        for (int i = id + 1;i < ns.size();++i) {
+            if (ns[i] >= ns[eid]) {
+                eid = i;
+            }
+        }
+        if (eid != id && ns[eid] != ns[id]) {
+            std::swap(ns[eid], ns[id]);
+            return true;
+        }
+        return false;
     }
 };
