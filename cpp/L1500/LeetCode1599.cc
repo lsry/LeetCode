@@ -1,6 +1,5 @@
 #include <vector>
 using std::vector;
-#include <numeric>
 
 class Solution {
 public:
