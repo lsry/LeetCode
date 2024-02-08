@@ -1,8 +1,3 @@
-#include<iostream>
-using std::cin;
-using std::cout;
-using std::endl;
-
 #include<vector>
 using std::vector;
 #include <unordered_map>

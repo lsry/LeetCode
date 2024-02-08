@@ -1,12 +1,10 @@
-#include <iostream>
-using namespace std;
 #include "../heads/list_node.h"
 
 int getLength(ListNode *l)
 {
     int i = 0;
     ListNode *p = l;
-    while (p != NULL)
+    while (p != nullptr)
     {
         i++;
         p = p->next;
@@ -15,17 +13,17 @@ int getLength(ListNode *l)
 }
 ListNode *addTwoNumbers(ListNode *l1, ListNode *l2)
 {
-    ListNode *p = NULL, *q = NULL;
+    ListNode *p = nullptr, *q = nullptr;
     int len1 = getLength(l1);
     int len2 = getLength(l2);
     len1 >= len2 ? (p = l1, q = l2) : (p = l2, q = l1);
     int m = 0;
-    while (p != NULL && q != NULL)
+    while (p != nullptr && q != nullptr)
     {
         int temp = (p->val + q->val + m) % 10;
         m = (p->val + q->val + m) / 10;
         p->val = temp;
-        if (p->next == NULL && m > 0)
+        if (p->next == nullptr && m > 0)
         {
             ListNode *node = new ListNode(m);
             p->next = node;
@@ -38,7 +36,7 @@ ListNode *addTwoNumbers(ListNode *l1, ListNode *l2)
         int k = (p->val + m) % 10;
         m = (p->val + m) / 10;
         p->val = k;
-        if (p->next == NULL && m > 0)
+        if (p->next == nullptr && m > 0)
         {
             ListNode *node = new ListNode(m);
             p->next = node;
