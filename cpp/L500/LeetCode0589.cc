@@ -21,6 +21,9 @@ public:
     }
 };
 
+/**
+ * 將孩子逆序加入棧中
+ */
 class Solution {
 public:
     vector<int> preorder(Node* root) {
