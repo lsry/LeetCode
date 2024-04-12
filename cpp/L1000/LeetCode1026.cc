@@ -1,4 +1,4 @@
-#include "heads/tree_node.h"
+#include "../heads/tree_node.h"
 #include <cstdlib>
 #include <algorithm>
 
