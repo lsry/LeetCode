@@ -3,6 +3,9 @@ using std::vector;
 
 class Solution {
 public:
+    /**
+     * 考慮 dp[i][k]: 代表以 i 元素結尾，刪除 k 次的最大和
+     */
     int maximumSum(vector<int>& arr) {
         if (arr.empty()) {
             return 0;
