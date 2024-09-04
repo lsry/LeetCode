@@ -75,6 +75,7 @@ public:
     bool search(string searchWord) {
         std::size_t ix{searchWord.size()};
         for (std::size_t i{0};i < ix;++i) {
+            // 尝试每一个可能替换字母的位置
             if (findWord(searchWord, i)) {
                 return true;
             }
