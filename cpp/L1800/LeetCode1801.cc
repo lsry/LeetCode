@@ -2,7 +2,6 @@
 using std::vector;
 
 #include <queue>
-#include <array>
 
 class Solution {
     constexpr static unsigned long long int MOD = 1'000'000'007ULL;
