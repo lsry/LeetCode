@@ -3,6 +3,9 @@ using std::vector;
 
 class Solution {
 public:
+    /**
+     * @brief 二分，包含目标数字的那半部分的长度为奇数，否则为偶数
+     */
     int singleNonDuplicate(vector<int>& nums) {
         int l = 0, r = nums.size();
         int sz = nums.size();
