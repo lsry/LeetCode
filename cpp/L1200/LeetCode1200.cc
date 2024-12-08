@@ -2,6 +2,7 @@
 using std::vector;
 
 #include <algorithm>
+#include <numeric>
 
 class Solution {
 public:
