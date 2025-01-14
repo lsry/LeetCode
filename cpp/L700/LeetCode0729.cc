@@ -1,5 +1,9 @@
 #include <memory>
 
+/*
+ * 使用链表構造形成有序，然後依次判斷是否和之前的有重叠，無則插入到鏈表中
+ */
+ 
 class TimeNode {
 public:
     int start, end;
