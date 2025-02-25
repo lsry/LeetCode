@@ -8,7 +8,7 @@ struct SkipNode
     std::shared_ptr<SkipNode> prev, next, top, down;
     bool head;
     
-    SkipNode(int val, bool head): head(head), val(val), prev(nullptr), next(nullptr), top(nullptr), down(nullptr) {}
+    SkipNode(int val, bool head): val(val), prev(nullptr), next(nullptr), top(nullptr), down(nullptr), head(head) {}
 };
 
 class Skiplist {
