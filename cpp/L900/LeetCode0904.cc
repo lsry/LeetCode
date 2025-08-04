@@ -5,7 +5,7 @@ using std::vector;
 
 class Solution {
 public:
-    int totalFruit(vector<int>& fruits) {
+    int totalFruitMap(vector<int>& fruits) {
         std::unordered_map<int, int> map;
         int ans{0}, left{0};
         int fz = fruits.size();
@@ -21,6 +21,34 @@ public:
                 }
             }
             ans = std::max(ans, right - left + 1);
+        }
+        return ans;
+    }
+
+    int totalFruit(vector<int>& fruits) {
+        int ans{0};
+        int first = -1, second = -1;
+        int cur{0};
+        for (int i = 0;i < fruits.size();++i) {
+            if (first == -1) {
+                ++cur;
+                first = fruits[i];
+            } else if (second == -1) {
+                ++cur;
+                second = fruits[i];
+            } else if (fruits[i] == first || fruits[i] == second) {
+                ++cur;
+            } else {
+                int j = i - 1;
+                while (j >= 0 && fruits[i - 1] == fruits[j]) {
+                    --j;
+                }
+                cur = i - 1 - j;
+                i--;
+                first = fruits[i];
+                second = -1;
+            }
+            ans = std::max(ans, cur);
         }
         return ans;
     }
