@@ -2,7 +2,6 @@
 using std::vector;
 
 #include <queue>
-#include <numeric>
 
 class Solution {
 public:

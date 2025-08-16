@@ -37,7 +37,17 @@ class Solution {
         return false;
     }                
 public:
+    // 表示成三進制的和，則每一位不是0就是1
     bool checkPowersOfThree(int n) {
-        
+        if (n <= 0) {
+            return false;
+        }
+        while (n > 0) {
+            if (n % 3 == 2) {
+                return false;
+            }
+            n /= 3;
+        }
+        return true;
     }
 };
