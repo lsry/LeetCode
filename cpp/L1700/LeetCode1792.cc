@@ -5,6 +5,7 @@ using std::vector;
 
 class Solution {
 public:
+    // 優先安排通過率增加量最大的班級
     double maxAverageRatio(vector<vector<int>>& classes, int extraStudents) {
         auto fn{[&](int x, int y) {
             double d1 = (classes[x][0] + 1) * 1.0 / (classes[x][1] + 1) - classes[x][0] * 1.0 / classes[x][1];
