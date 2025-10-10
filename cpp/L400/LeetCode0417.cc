@@ -4,8 +4,6 @@ using std::vector;
 #include <queue>
 using std::queue;
 
-#include <fast_io.h>
-
 #include <array>
 
 class Solution {

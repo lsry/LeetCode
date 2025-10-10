@@ -1,6 +1,6 @@
 #include <vector>
 using std::vector;
-#include <numeric>
+#include <limits>
 
 class Solution {
     int N;
