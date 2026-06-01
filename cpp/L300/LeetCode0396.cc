@@ -1,6 +1,9 @@
 #include <vector>
 using std::vector;
 
+/**
+ * F(k) - F(k - 1) = sum - (N - 1) * a[N - k] - a[N - k]
+ */
 class Solution {
 public:
     int maxRotateFunction(vector<int>& nums) {

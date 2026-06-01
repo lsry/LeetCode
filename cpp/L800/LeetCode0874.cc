@@ -1,7 +1,6 @@
 #include <vector>
 using std::vector;
 #include <unordered_set>
-#include <iostream>
 #include <array>
 
 class Solution {
