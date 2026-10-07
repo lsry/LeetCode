@@ -1,6 +1,8 @@
-#include <iostream>  
+#include <cmath>
+#include <iostream>
 #include <stack>
 #include <string>
+#include <unordered_map>
 
 using std::string;
 using std::stack;
@@ -39,8 +41,29 @@ bool isValid(string s) {
 			}
 		}
 	}
-	return (st.top() == '#' ? true : false);
+	return st.top() == '#';
 }
+
+class Solution {
+public:
+    bool isValid(string s) {
+        std::stack<char> st;
+        st.push('#');
+        std::unordered_map<char, char> mp{{')', '('}, {']', '['}, {'}', '{'}};
+        for (char c : s) {
+            if (mp.contains(c)) {
+                if (st.top() == mp[c]) {
+                    st.pop();
+                } else {
+                    return false;
+                }
+            } else {
+                st.push(c);
+            }
+        }
+        return st.top() == '#';
+    }
+};
 
 int main(int argc, char *argv[])
 {

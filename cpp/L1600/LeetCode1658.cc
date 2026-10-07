@@ -3,7 +3,7 @@ using std::vector;
 #include <unordered_map>
 #include <numeric>
 
-class Solution {
+class SolutionWithMap {
 public:
     int minOperations(vector<int>& nums, int x) {
         std::unordered_map<int, int> map;
@@ -37,5 +37,28 @@ public:
             }
         }
         return ans;
+    }
+};
+
+class Solution {
+public:
+    int minOperations(vector<int>& nums, int x) {
+        int sum{std::accumulate(nums.begin(), nums.end(), 0)};
+        if (sum < x) {
+            return -1;
+        }
+        int N = nums.size();
+        int ans{N + 1};
+        for (int preSum{0}, left{0}, right{0};right < N;++right) {
+            preSum += nums[right];
+            while (left <= right && preSum > sum - x) {
+                preSum -= nums[left];
+                ++left;
+            }
+            if (preSum == sum - x) {
+                ans = std::min(ans, N - (right - left + 1));
+            }
+        }
+        return ans == N + 1 ? -1 : ans;
     }
 };

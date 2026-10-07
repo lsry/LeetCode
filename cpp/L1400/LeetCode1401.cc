@@ -1,9 +1,10 @@
+#include <algorithm>
 class Solution {
 public:
-    bool checkOverlap(int radius, int xCenter, int yCenter, int x1, int y1, int x2, int y2) {
+    bool checkOverlapBefore(int radius, int xCenter, int yCenter, int x1, int y1, int x2, int y2) {
         if (x1 > xCenter + radius || x2 < xCenter - radius || y1 > yCenter + radius || y2 < yCenter - radius) {
             return false;
-        }      
+        }
         int plb = (x1 - xCenter) * (x1 - xCenter) + (y1 - yCenter) * (y1 - yCenter);
         int plt = (x1 - xCenter) * (x1 - xCenter) + (y2 - yCenter) * (y2 - yCenter);
         int prb = (x2 - xCenter) * (x2 - xCenter) + (y1 - yCenter) * (y1 - yCenter);
@@ -25,5 +26,15 @@ public:
             return true;
         }
         return false;
+    }
+
+    bool checkOverlap(int radius, int xCenter, int yCenter, int x1, int y1, int x2, int y2) {
+        int xmin = std::max(x1, std::min(x2, xCenter));
+        int ymin = std::max(y1, std::min(y2, yCenter));
+
+        long long int dx = xmin - xCenter;
+        long long int dy = ymin - yCenter;
+
+        return 1LL * radius * radius >= dx * dx + dy * dy;
     }
 };

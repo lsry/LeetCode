@@ -1,3 +1,4 @@
+#include <utility>
 #include <vector>
 using std::vector;
 
@@ -6,7 +7,7 @@ using std::string;
 
 #include <stack>
 
-class Solution {
+class SolutionOld {
 private:
     int trace(string const &s, int f, int e, vector<int> const &pos) {
         if (f >= e) {
@@ -37,5 +38,31 @@ public:
             }
         }
         return trace(s, 0, sz - 1, pos);
+    }
+};
+
+class Solution {
+    std::pair<int, int> S(string const &s, int ix) {
+        auto [as, ai] = A(s, ix);
+        auto [bs, bi] = B(s, ai);
+        return std::pair<int, int>(as + bs, bi);
+    }
+    std::pair<int, int> A(string const &s, int ix) {
+        if (ix >= s.size() || s[ix] == ')') {
+            return std::pair<int, int>(0, ix);
+        }
+        auto [score, nix] = S(s, ix + 1);
+        return std::pair<int, int>(score == 0 ? 1 : 2 * score, nix + 1);
+    }
+    std::pair<int, int> B(string const &s, int ix) {
+        if (ix >= s.size() || s[ix] == ')') {
+            return std::pair<int, int>(0, ix);
+        }
+        return S(s, ix);
+    }
+public:
+    int scoreOfParentheses(string s) {
+        auto [a, b] = S(s, 0);
+        return a;
     }
 };
